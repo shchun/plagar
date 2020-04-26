@@ -4,7 +4,8 @@
 #endif 
  
 #include<stdio.h> 
- 
+#include<stdlib.h>
+
 #define DATA_MAX_LENGTH (100) 
 #define EXTRACT_DATA_LENGTH (8) 
  
@@ -55,6 +56,10 @@ static bool extractData(){
  
     int return_val = findID(args);
  
+    if(return_val != dataID) {
+        printf("### [%d] [%d]\n", return_val, dataID);
+        exit(1);
+    }
     return return_val == dataID;
 }
  
